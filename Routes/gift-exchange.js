@@ -1,12 +1,17 @@
 const express = require("express");
-const appRouter = express.Router();
+const router = express.Router();
 
 // export default express();
-
-appRouter.post("/pairs", async (req, res, next) => {
-  res.status(200).json({ names: [] });
+router.post("/", async (req, res, next) => {
+  res.status(200);
+  res.send(req.query);
 });
-appRouter.post("/traditional", async (req, res, next) => {
-  res.status(200).json({ names: [] });
+router.post("/pairs", async (req, res, next) => {
+  res.status(200);
+  res.send(req.query);
 });
-module.exports = appRouter;
+router.post("/traditional", async (req, res, next) => {
+  res.status(200);
+  res.send(req.query);
+});
+module.exports = router;
